@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Girl ❤️</title>
+    <style>
+        body {
+            background-color: #ffeef2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 { color: #d63384; margin-bottom: 10px; }
+        .btn-group {
+            margin-top: 20px;
+            height: 50px;
+            position: relative;
+            width: 300px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            transition: 0.2s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; margin-right: 20px; }
+        #noBtn { 
+            background-color: #6c757d; 
+            color: white; 
+            position: absolute; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <h2 style="color: #555;">[Her Name]</h2>
+        
+        <div class="btn-group">
+            <button id="yesBtn" onclick="showLove()">Yes</button>
+            <button id="noBtn" onmouseover="moveNo()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            // Move within a 400px radius so it doesn't fly off screen entirely
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function showLove() {
+            document.body.innerHTML = `
+                <div class="container">
+                    <h1>Yay! Can't wait! ❤️</h1>
+                    <p>“Every moment with you is a favorite.”</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
